@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Obminyk PRO — Розширений обмінник (демо)</title>
+
+  <!-- Підключення CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="mark">OK</div>
+      <div>
+        <div style="font-weight:800">Obminyk PRO — Expanded</div>
+        <div class="subtitle">Демонстраційний інтерфейс для обміну криптовалют (станом на 2025-11-23)</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#market">Ринок</a>
+      <a href="#exchange">Обмін</a>
+      <a href="#liquidity">Ліквідність</a>
+      <a href="#security">Безпека</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h1 class="title">Великий мультисервісний обмінник</h1>
+        <p class="subtitle">Підтримка 100+ активів, глибока ліквідність, P2P, API, фіатні шлюзи — демо з реальними ринковими цінами.</p>
+
+        <div class="panel">
+          <h3 style="margin:0">Рекомендовані пари</h3>
+          <div class="coins-grid" id="coinsGrid"></div>
+        </div>
+
+        <div style="height:18px"></div>
+
+        <div class="panel">
+          <h3 style="margin:0">Графік цен (демо)</h3>
+          <p class="muted">Тут можна вбудувати реальний графік з TradingView або Chart.js. У демо — статичний маленький SVG.</p>
+          <div class="chart">
+            <svg width="100%" height="120" viewBox="0 0 600 120" preserveAspectRatio="none">
+              <polyline fill="none" stroke="#06b6d4" stroke-width="2"
+                points="0,90 60,76 120,60 180,65 240,40 300,42 360,50 420,30 480,35 540,28 600,40"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-right panel" id="exchange">
+        <h3 style="margin:0">Панель обміну</h3>
+        <div class="muted" style="margin-top:6px">Обирай напрямок та вивчай ринкові ціни (станом на 2025-11-23)</div>
+
+        <label>Віддаю</label>
+        <select id="fromCoin">
+          <option>BTC</option><option>ETH</option><option>USDT</option>
+          <option>BNB</option><option>SOL</option><option>LTC</option>
+        </select>
+
+        <label>Отримую</label>
+        <select id="toCoin">
+          <option>USDT</option><option>BTC</option><option>ETH</option>
+          <option>LTC</option><option>SOL</option><option>BNB</option>
+        </select>
+
+        <label>Сума</label>
+        <input id="amt" type="number" placeholder="Наприклад 0.01">
+
+        <div class="btns">
+          <button id="sim">Симуляція</button>
+          <button id="exec" class="primary">Виконати (демо)</button>
+        </div>
+
+        <div id="estimate">Орієнтовно: —</div>
+
+        <hr>
+        <h4 style="margin:4px 0">Баланс (демо)</h4>
+
+        <div class="balance-grid">
+          <div>BTC: <b id="balBTC">0.125</b></div>
+          <div>USDT: <b id="balUSDT">1200</b></div>
+          <div>ETH: <b id="balETH">0.5</b></div>
+          <div>SOL: <b id="balSOL">2</b></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="panel" id="market">
+      <h3>Ринок — ціни (станом на 2025-11-23)</h3>
+      <p class="muted">Дані взяті з CoinGecko (у USD).</p>
+
+      <table>
+        <thead><tr><th>Монета</th><th>Символ</th><th>Ціна</th><th>24h зміна</th><th>Капіталізація</th></tr></thead>
+        <tbody id="marketTable"></tbody>
+      </table>
+    </section>
+
+    <section class="panel" id="liquidity">
+      <h3>Ліквідність і ордербук (демо)</h3>
+      <p class="muted">Глибина ринку, доступність суми без проскальзувань.</p>
+
+      <div class="liq-grid">
+        <div>
+          <h4>BTC/USDT</h4>
+          <p class="muted">Bid/Ask: 84680 / 84750</p>
+        </div>
+        <div>
+          <h4>ETH/USDT</h4>
+          <p class="muted">Bid/Ask: 2760 / 2775</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="security">
+      <h3>Безпека</h3>
+      <div class="security-grid">
+        <div>2FA</div>
+        <div>Холодні гаманці</div>
+        <div>Шифрування</div>
+      </div>
+    </section>
+
+    <div class="footer">© 2025 Obminyk PRO — Demo</div>
+  </main>
+
+  <!-- Підключення JS -->
+  <script src="script.js"></script>
+</body>
+</html>
